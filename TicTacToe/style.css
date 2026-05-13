@@ -1,0 +1,52 @@
+:root
+{
+--color-bg:  #EAC696;
+--color-accent: #2c1a03;
+--color-text-on-accent: #C8AE7D;
+--color-shadow: #765827;
+}
+.rye-regular 
+{
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body
+{
+    background-image: url("images/desert.png");
+    background-size: cover;
+   
+    font-family: "Rye", serif;
+    color: var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1
+{
+    justify-self: center;
+    font-size: clamp(2rem,6vw,9rem);
+}
+table
+{
+    height:200px;
+    width:200px;
+    
+}
+
+td
+{
+
+    background-color: var(--color-accent);
+    color: var(--color-text-on-accent);
+    text-align: center;   
+}
+.unactive
+{
+   color: var(--color-accent)
+}
+td:hover
+{
+    color:#c8ae7d6c
+}
