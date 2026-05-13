@@ -4,6 +4,7 @@ let table = document.createElement("table");
 
 let currentPlayer = "X";
 let choices = ["O","X"];
+let chosenFields = [] // array vacio
 let turn = 0;
 
 function setUp()
@@ -20,7 +21,7 @@ for(let i = 0; i<9; i++)
     fields[i].addEventListener("click",()=>
     {
         fields[i].classList.remove("unactive"); 
-        let chosenField = fields[i];
+        chosenFields.push(field[i]);
 
         changeTurn(event);
     });  
@@ -30,7 +31,18 @@ function changeTurn(event)
 {
     turn = 1 - turn; //switches between 0 and 1
     currentPlayer = choices[turn];
-    for
+    for(let i = 0; i<9; i++)
+    {
+        if(fields[j].contains(chosenField[j])
+        {
+        }
+        else
+        {
+             fields[j].textContent = turn;
+        }
+       
+        
+    }
 ///// for para cambiar todas las fields a turn + un array de chosen fields !
 }
 
