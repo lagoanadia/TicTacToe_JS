@@ -3,7 +3,7 @@ let fields = document.querySelectorAll("td");
 let table = document.createElement("table");
 
 let currentPlayer = "X";
-let choices = ["O","X"];
+let choices = ["X","O"];
 let turn = 0;
 
 function setUp()
@@ -19,8 +19,8 @@ for(let i = 0; i<9; i++)
 {
     fields[i].addEventListener("click",()=>
     {
-        fields[i].classList.toggle("unactive"); 
-        let chosenField = fields[i];
+        fields[i].classList.remove("unactive"); 
+        fields[i].classList.add("played");
 
         changeTurn(event);
     });  
@@ -28,9 +28,16 @@ for(let i = 0; i<9; i++)
 
 function changeTurn(event)
 {
-    turn = 1 - turn; //switches between 0 and 1
+    turn = (turn +1) % 2 ; //switches between 0 and 1
     currentPlayer = choices[turn];
-    
-///// for para cambiar todas las fields a turn + un array de chosen fields !
+    for(let i=0; i<fields.length; i++)
+    {
+        if(!fields[i].classList.contains("played"))
+        {
+            fields[i].textContent = choices[turn];
+            console.log("holi");
+        }
+    }
+
 }
 
